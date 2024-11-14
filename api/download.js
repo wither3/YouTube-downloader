@@ -3,7 +3,6 @@ const axios = require('axios');
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 // Enable CORS
 app.use(cors());
@@ -75,6 +74,5 @@ app.get('/download', async (req, res) => {
   res.json(result);
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+// Export the app for Vercel
+module.exports = app;
